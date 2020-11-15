@@ -1,0 +1,55 @@
+#Registrar Nuevos Alumnos
+
+curl -X POST \
+http://localhost:8090/servicio-alumno/alumno/registrar \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-d '{
+"apellidos":"Suarez Loli",
+"nombres": "Edson J",
+"sexo":"Masculino",
+"edad":27
+}'
+
+#Editar Alumnos
+curl -X PUT \
+http://localhost:8090/servicio-alumno/alumno/modificar \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-d '{
+"id": 1,
+"apellidos": "Suarez Loli",
+"nombres": "Edson J",
+"sexo": "Masculino",
+"edad": 25
+}'
+
+#Listar Todos los alumnos
+curl -X GET \
+http://localhost:8090/servicio-alumno/alumno/listar \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-d '{
+"apellidos":"Peña",
+"nombres": "Jennifer",
+"sexo":"Femenino",
+"edad":27
+}'
+
+#Listar Alumno por ID
+curl -X GET \
+http://localhost:8090/servicio-alumno/alumno/listar/1 \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-d '{
+"apellidos":"Peña",
+"nombres": "Jennifer",
+"sexo":"Femenino",
+"edad":27
+}'
+
+#Eliminar Alumno
+curl -X DELETE \
+http://localhost:8090/servicio-alumno/alumno/eliminar/2 \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
